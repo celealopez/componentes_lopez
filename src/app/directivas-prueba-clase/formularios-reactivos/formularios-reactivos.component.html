@@ -1,0 +1,37 @@
+<p>formularios reactivos</p>
+
+<form [formGroup]="formularioUsuario" (ngSubmit)="agregarUsuario()">
+  <div>
+    <label for="">nombre</label>
+    <input type="text"  formControlName="nombre"/>
+    <p *ngIf=" formularioUsuario.get('nombre')?.touched && formularioUsuario.get('nombre')?.errors?.['required']">este campo es requerido</p>
+  </div>
+
+  <div>
+    <label for="">correo</label>
+    <input type="text" formControlName="correo" />
+    <p *ngIf="formularioUsuario.get('correo')?.touched &&  formularioUsuario.get('correo')?.errors?.['required']">este campo es requerido</p>
+    <p *ngIf="formularioUsuario.get('correo')?.touched && formularioUsuario.get('correo')?.errors?.['email']">el formato es erroneo</p>
+  </div>
+
+  <div>
+    <label for="">contraseña</label>
+    <input type="password"  formControlName="contrasenia"/>
+    <p *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['required']">este campo es requerido</p>
+    <p  *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['minlength']">minimo 5 caracteres</p>
+  </div>
+  <div>
+    <label for="">contraseña</label>
+    <input type="password"  formControlName="contrasenia"/>
+    <p *ngIf="formularioUsuario.get('contrasenia2')?.touched && formularioUsuario.get('contrasenia')?.errors?.['required']">este campo es requerido</p>
+    <p  *ngIf="formularioUsuario.get('contrasenia2')?.touched && formularioUsuario.get('contrasenia')?.errors?.['minlength']">minimo 5 caracteres</p>
+    <p *ngIf="!contraseniasIguales">La contraseña debe ser igual a la anterior</p>
+  </div>
+
+  <div>
+    <label for="">Admin:</label>
+    <input type="checkbox"  formControlName="admin"/>
+  </div>
+
+  <button type="submit" [disabled]="formularioUsuario.invalid">Agregar usuario</button>
+</form>

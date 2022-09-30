@@ -1,4 +1,18 @@
+div{
+    display: flex;
+    justify-content: space-around;
+}
+
 img{
-    width: 80%;
+    width: 200px;
     margin-left: 4rem;
+}
+
+a{
+    color: white;
+    display: flex;
+    flex-direction: row;
+}
+a:hover{
+    color: rgb(216, 201, 209);
 }
