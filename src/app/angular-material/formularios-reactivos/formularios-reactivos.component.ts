@@ -15,7 +15,7 @@ export class FormulariosReactivosComponent implements OnInit {
     this.formularioUsuario = fb.group({
       nombre: new FormControl('', [Validators.required]),
       correo: new FormControl('', [Validators.email,Validators.required]),
-      contrasenia: new FormControl('', [Validators.required,Validators.minLength(5)]),
+      contrasenia: new FormControl('', [Validators.required,Validators.minLength(5),Validators.pattern('^.*[A-Z]+.*$')]),
       contrasenia2: new FormControl('', [Validators.required,Validators.minLength(5)]),
       admin: new FormControl(false, []),
     });
@@ -23,9 +23,12 @@ export class FormulariosReactivosComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  agregarUsuario(){
-    const contrasenia = this.formularioUsuario.value.contrasenia;
+  contras(){
+    const contrasenia1 = this.formularioUsuario.value.contrasenia;
     const contrasenia2 = this.formularioUsuario.value.contrasenia2;
-  this.contraseniasIguales = contrasenia === contrasenia2;
+  this.contraseniasIguales = contrasenia1 === contrasenia2;
+  }
+  agregarUsuario(){
+
   }
 }

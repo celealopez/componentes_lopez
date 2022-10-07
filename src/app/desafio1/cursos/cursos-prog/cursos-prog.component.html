@@ -1,0 +1,27 @@
+<mat-card class="m-3" [style.background-color]="variable === 5 ? 'grey': 'white'">
+
+    <h1 class="text-center p-2 mb-3 text-primary">Cursos para iniciar en la programación</h1>
+
+<table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Tipo</th>
+        <th scope="col">Nivel</th>
+        <th scope="col">Ir al sitio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let link of listaLinks" class="table-active">
+        <th scope="row">{{link.tipo}} </th>
+        <td>{{link.nivel}} </td>
+        <td>
+          <a href="{{ link.link }}">{{ link.link }} </a>
+        </td>
+      </tr>
+      
+    </tbody>
+    
+  </table>
+  <button class="btn btn-dark "(click)="fondoNegro()" >modo oscuro</button>
+  <button class="btn btn-primary "(click)="fondoBlanco()" >modo claro</button>
+</mat-card>

@@ -1,0 +1,39 @@
+
+<mat-card class="mat-elevation-z8">
+<mat-card-title  class="text-center" >Formulario de registro</mat-card-title>
+<hr> 
+<form [formGroup]="formularioUsuario" (ngSubmit)="agregarUsuario()">
+
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Nombre Completo</mat-label>
+        <input type="text" matInput formControlName="nombre" placeholder="Ex. pat@example.com" class="p-3">
+        <mat-hint *ngIf="formularioUsuario.get('nombre')?.touched &&  formularioUsuario.get('correo')?.errors?.['required']">este campo es requerido</mat-hint>
+       
+      </mat-form-field>
+
+
+    
+ 
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="correo" placeholder="Ex. pat@example.com" class="p-3">
+          <mat-hint *ngIf="formularioUsuario.get('correo')?.touched &&  formularioUsuario.get('correo')?.errors?.['required']">este campo es requerido</mat-hint>
+          <mat-hint *ngIf="formularioUsuario.get('correo')?.touched && formularioUsuario.get('correo')?.errors?.['email']">el formato es erroneo</mat-hint>
+        </mat-form-field>
+    
+
+       
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Contraseña</mat-label>
+              <input type="password" matInput formControlName="contrasenia" class="p-3">
+              <mat-hint *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['required']">este campo es requerido</mat-hint>
+    <mat-hint  *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['minlength']">( mínimo 5 caracteres )</mat-hint>
+    <mat-hint  *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['pattern']">( mínimo 1 mayuscula )</mat-hint>
+            </mat-form-field>
+      
+    
+      <button  mat-raised-button color="primary" type="submit" [disabled]="formularioUsuario.invalid">Registrar</button>
+
+
+</form>
+</mat-card>

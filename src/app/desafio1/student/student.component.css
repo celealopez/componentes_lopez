@@ -1,11 +1,8 @@
-div{
-    display: flex;
-    justify-content: space-around;
-}
 
-img{
-    width: 200px;
-    margin-left: 4rem;
+
+#img{
+    width: 7rem;
+   
 }
 
 a{
@@ -15,4 +12,16 @@ a{
 }
 a:hover{
     color: rgb(216, 201, 209);
+}
+img{
+    width: 100%;
+    margin: 2rem;
+    
+}
+.todo{
+    background-image: url("https://img.wattpad.com/4186ac29a23727fafde3a91dc739a2b772443d67/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f476448686375546c3543736c56513d3d2d3633383136303531392e313535396638623730373731663732383738343934353633383439302e676966");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    height: 100%;
+    
 }

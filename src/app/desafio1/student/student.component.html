@@ -1,38 +1,25 @@
-<div class="row container m-4 my-4" [style.background-color]="variable === 5 ? 'grey': 'white'">
-  <h1 class="text-center p-2 mb-3">Cursos para iniciar en la programación</h1>
 
-  <table class="table table-dark">
-    <thead>
-      <tr>
-        <th scope="col">Tipo</th>
-        <th scope="col">Nivel</th>
-        <th scope="col">Ir al sitio</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let link of listaLinks" class="table-active">
-        <th scope="row">{{link.tipo}} </th>
-        <td>{{link.nivel}} </td>
-        <td>
-          <a href="{{ link.link }}">{{ link.link }} </a>
-        </td>
-      </tr>
+
+
+<mat-card class="example-card" class="todo container m-5 " >
+  
+  
+
+    <div class=" row container">
       
-    </tbody>
-    
-  </table>
-  <button class="btn btn-dark "(click)="fondoNegro()" >modo oscuro</button>
-  <button class="btn btn-primary "(click)="fondoBlanco()" >modo claro</button>
-  <div class="container row">
-      
-    <img
+    <div class="text-center"><img id="img"
       src="https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg" 
       alt=""
-    />
-    <img
+   >
+  <img id="img"
       src="https://vlctesting.es/wp-content/uploads/2022/08/Open-Bootcamp.png"
       alt=""
     />
-    <img src="https://assets.stickpng.com/thumbs/580b57fcd9996e24bc43c548.png" alt="" />
+  
+  
   </div>
-</div>
+    
+   
+  </div>
+  </mat-card>
+

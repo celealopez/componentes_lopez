@@ -19,6 +19,7 @@
     <input type="password"  formControlName="contrasenia"/>
     <p *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['required']">este campo es requerido</p>
     <p  *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['minlength']">minimo 5 caracteres</p>
+    <p  *ngIf="formularioUsuario.get('contrasenia')?.touched && formularioUsuario.get('contrasenia')?.errors?.['pattern']">minimo 1 mayuscula</p>
   </div>
   <div>
     <label for="">contraseña</label>
