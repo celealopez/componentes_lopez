@@ -23,6 +23,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { LoginComponent } from './desafio1/botones-ingresar-registrar/login/login.component';
 import { CursosProgComponent } from './desafio1/cursos/cursos-prog/cursos-prog.component';
 import { IngresarComponent } from './desafio1/botones-ingresar-registrar/ingresar/ingresar.component';
+import { BooleanSiNoPipe } from './pipes/boolean-si-no.pipe';
+import { H1FontDirective } from './directivas/h1-font.directive';
 
 
 @NgModule({
@@ -40,6 +42,8 @@ import { IngresarComponent } from './desafio1/botones-ingresar-registrar/ingresa
     LoginComponent,
     CursosProgComponent,
     IngresarComponent,
+    BooleanSiNoPipe,
+    H1FontDirective,
    
     
   ],

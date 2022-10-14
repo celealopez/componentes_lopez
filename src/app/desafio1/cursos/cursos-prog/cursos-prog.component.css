@@ -1,0 +1,44 @@
+/* Structure */
+table {
+    width: 100%;
+   
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+
+  .mat-column-tipo {
+    padding-left: 10px;
+    font-weight: bold;
+  
+    }
+
+  
+  .mat-column-activo {
+    padding-left: 10px;
+    text-align: center;
+
+  }
+
+  
+  .mat-column-nivel {
+    padding-left: 10px;
+    text-align: center;
+   
+  }
+
+  
+  .mat-column-link {
+    padding-left: 10px;
+  
+   
+  }
+
+  .mat-column-acciones {
+    padding-left: 10px;
+    text-align: center;
+ }
+   

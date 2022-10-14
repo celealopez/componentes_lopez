@@ -12,11 +12,11 @@ export class EjAngularMaterialComponent implements OnInit {
    constructor() {
      this.variable=0;
      this.listaLinks = [
-    {tipo:'programación',nivel:'básico',link:'https://www.udemy.com/course/logica-programacion-aprende-programar-en-cualquier-lenguaje/'},
-    {tipo:'programación',nivel:'básico',link:'https://www.udemy.com/course/fundamentos-de-programacion-web-para-principiantes/'},
-    {tipo:'programación',nivel:'básico',link:'https://www.udemy.com/course/aprende-logica-de-programacion/'},
-    {tipo:'programación',nivel:'básico',link:'https://www.udemy.com/course/programacion-todosloslenguajes/'},
-    {tipo:'programación',nivel:'básico',link:'https://www.udemy.com/course/algoritmos-estructuras-de-datos/'}
+    {id:1,tipo:'programación',activo:true,nivel:'básico',link:'https://www.udemy.com/course/logica-programacion-aprende-programar-en-cualquier-lenguaje/'},
+    {id:1,tipo:'programación',activo:true,nivel:'básico',link:'https://www.udemy.com/course/fundamentos-de-programacion-web-para-principiantes/'},
+    {id:1,tipo:'programación',activo:true,nivel:'básico',link:'https://www.udemy.com/course/aprende-logica-de-programacion/'},
+    {id:1,tipo:'programación',activo:true,nivel:'básico',link:'https://www.udemy.com/course/programacion-todosloslenguajes/'},
+    {id:1,tipo:'programación',activo:true,nivel:'básico',link:'https://www.udemy.com/course/algoritmos-estructuras-de-datos/'}
        
      ];
     }
