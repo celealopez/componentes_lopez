@@ -1,6 +1,7 @@
-/* Structure */
+Structure */
 table {
     width: 100%;
+   display: flex;
    
   }
   
@@ -41,4 +42,4 @@ table {
     padding-left: 10px;
     text-align: center;
  }
-   
+  

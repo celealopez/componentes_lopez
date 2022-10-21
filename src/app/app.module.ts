@@ -25,6 +25,7 @@ import { CursosProgComponent } from './desafio1/cursos/cursos-prog/cursos-prog.c
 import { IngresarComponent } from './desafio1/botones-ingresar-registrar/ingresar/ingresar.component';
 import { BooleanSiNoPipe } from './pipes/boolean-si-no.pipe';
 import { H1FontDirective } from './directivas/h1-font.directive';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { H1FontDirective } from './directivas/h1-font.directive';
     MatTableModule,
     MatIconModule,
     MatButtonModule,
+    MatPaginatorModule
 
   ],
   
