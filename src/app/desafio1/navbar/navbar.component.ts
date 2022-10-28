@@ -11,8 +11,10 @@ import { IngresarComponent } from '../botones-ingresar-registrar/ingresar/ingres
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,  router : Router) { }
-
+  constructor(public dialog: MatDialog, public router : Router) { }
+  agregarCurso(){
+    this.router.navigate([`nuevoCurso`]);
+  }
   ngOnInit(): void {
   }
 
@@ -30,5 +32,9 @@ export class NavbarComponent implements OnInit {
       
     });
   }
+
+  
+
+  
 
 }

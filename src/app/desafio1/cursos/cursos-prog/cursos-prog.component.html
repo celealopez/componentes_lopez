@@ -4,9 +4,9 @@
 <mat-card class="m-3 col-12" [style.background-color]="variable === 5 ? 'grey': 'white'">
 
     <h1 class="text-center p-2 mb-3 text-primary">Cursos para iniciar en la programación</h1>
+    <button mat-raised-button color="primary" class="m-2" >agregar Curso</button>
 
-
-<table *ngFor="let curso of listaLinks" class="container mat-elevation-z8 mb-3 " style="width: 900px;">
+<table *ngFor="let curso of cursosObservable | async" class="container mat-elevation-z8 mb-3 " style="width: 900px;">
 
  
   <ng-container matColumnDef="tipo" >

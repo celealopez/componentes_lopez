@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatButtonModule} from '@angular/material/button';
@@ -26,6 +25,9 @@ import { IngresarComponent } from './desafio1/botones-ingresar-registrar/ingresa
 import { BooleanSiNoPipe } from './pipes/boolean-si-no.pipe';
 import { H1FontDirective } from './directivas/h1-font.directive';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { NuevoCursoComponent } from './desafio1/nuevo-curso/nuevo-curso.component';
+
+
 
 
 @NgModule({
@@ -45,6 +47,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     IngresarComponent,
     BooleanSiNoPipe,
     H1FontDirective,
+    NuevoCursoComponent,
    
     
   ],
@@ -63,8 +66,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatTableModule,
     MatIconModule,
     MatButtonModule,
-    MatPaginatorModule
-
+    MatPaginatorModule,
+   
+    
   ],
   
   providers: [],
