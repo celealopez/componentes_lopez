@@ -13,34 +13,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./cursos-prog.component.css'],
 })
 export class CursosProgComponent implements OnInit , OnDestroy { 
-  listaLinks!: Cursos[];
+ 
   suscripcion:any;
   variable: number;
-  public page!: number;
-  filterPost: any = '';
-  ELEMENT_DATA!: Cursos[];
-  private subs!: Subscription;
-  displayedColumns: string[] = ['tipo', 'activo', 'nivel', 'link', 'acciones'];
-  dataSource = new MatTableDataSource<Cursos>(this.ELEMENT_DATA);
-  dataInicial = this.listaLinks;
-
-  cursosObservable : Observable<Cursos[]>;
   
-  constructor(private cursosService: CursosService, public router : Router) {
+  
+  private subs: Subscription;
+
+  public page!:number 
+  filterPost:any=''
+  ELEMENT_DATA!:Cursos[];
+    displayedColumns: string[] = ['tipo', 'activo','nivel', 'link','acciones'];
+    dataSource =new MatTableDataSource<Cursos>(this.ELEMENT_DATA);
+  
+
+  
+  constructor(public cursosService: CursosService, public router : Router) {
     this.variable = 0;
 
-
-    this.cursosObservable = cursosService.obtenerCursosObservable();
-
-
-  this.suscripcion = cursosService.obtenerCursosObservable().subscribe({
-    next:(listaLinks : Cursos[])=>{
-      this.listaLinks = listaLinks;
-    },
-    error:(error)=>{
-      console.error(error);
-    }
-  }).unsubscribe();
+    this.subs = new Subscription();
+    
+   
+ 
     // cursosService
     //   .obtenerCursos()
     //   .then((valor: Cursos[]) => {
@@ -55,10 +49,12 @@ export class CursosProgComponent implements OnInit , OnDestroy {
   ngOnDestroy(): void {
     this.suscripcion.unsubscribe();
   }
+  
 
   ngOnInit(): void {
-
- 
+   
+    let resp = this.cursosService.getCursos();
+    resp.subscribe(report=>this.dataSource.data=report)
   }
 
   fondoNegro() {
@@ -79,18 +75,40 @@ export class CursosProgComponent implements OnInit , OnDestroy {
   //   const filterValue = (event.target as HTMLInputElement).value;
   //   this.listaLinks.filter = filterValue.trim().toLowerCase();
   // }
-
-  borrar(id: number) {
-    if (confirm('¿Está seguro de borrar?')) {
-      const position = this.listaLinks.findIndex(
-        (element) => element.id === id
+  editar(id:string){
+    
+    this.router.navigate([`editarCurso/${id}`]);
+   
+  }
+  borrarCurso(curso: string) {
+    
+    if (confirm('esta seguro de borrar')) {
+      
+      this.subs.add(
+        this.cursosService.eliminarCurso(curso).subscribe({
+          next: (result) => {
+          setTimeout(() => {
+            let resp = this.cursosService.getCursos();
+            resp.subscribe(report=>this.dataSource.data=report)
+          }, 50);
+          
+          
+          },
+          error: (err) => {
+            console.log(err.status);
+          },
+        })
       );
-      this.listaLinks.splice(position, 1);
-      this.listaLinks = this.listaLinks;
-      this.dataSource.data = this.dataInicial;
     }
   }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
+ agregarCurso(){
+  this.router.navigate(['nuevoCurso']);
+ }
  
   
 }

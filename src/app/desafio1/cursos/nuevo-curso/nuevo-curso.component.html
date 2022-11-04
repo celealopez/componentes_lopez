@@ -1,6 +1,7 @@
 <div class="container m-4">
 <mat-card class="mat-elevation-z15" >
-<form action="">
+<form [formGroup]="formulario" (ngSubmit)="agregarCurso(curso)">
+    <div class="row">
   <h1>Agrega un curso gratis para compartir con la comunidad</h1>
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>tipo</mat-label>
@@ -22,6 +23,8 @@
         <textarea matInput placeholder=""></textarea>
       </mat-form-field>
 
+      <button  (click)="agregarCurso(curso)">hh</button>
+</div>
 </form>
 </mat-card>
 </div>
